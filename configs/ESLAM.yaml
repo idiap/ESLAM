@@ -1,0 +1,78 @@
+scale: 1
+verbose: False
+device: "cuda:0"
+keyframe_device: "cuda:0" ## Change this to "cpu" to reduce GPU memory usage
+planes_res:
+  coarse: 0.24
+  fine: 0.06
+  bound_dividable: 0.24
+c_planes_res:
+  coarse: 0.24
+  fine: 0.03
+meshing:
+  level_set: 0
+  resolution: 0.01 #cm # Increase this number to speed up meshing algorithm
+  eval_rec: False
+  mesh_bound_scale: 1.02
+tracking:
+  ignore_edge_W: 75
+  ignore_edge_H: 75
+  vis_freq: 4000
+  vis_inside_freq: 400
+  const_speed_assumption: True
+  no_vis_on_first_frame: True
+  gt_camera: False
+  lr_T: 0.001
+  lr_R: 0.001
+  pixels: 2000
+  iters: 8
+  w_sdf_fs: 10
+  w_sdf_center: 200
+  w_sdf_tail: 50
+  w_depth: 1
+  w_color: 5
+mapping:
+  every_frame: 4
+  joint_opt: True
+  joint_opt_cam_lr: 0.001
+  no_vis_on_first_frame: True
+  no_mesh_on_first_frame: True
+  no_log_on_first_frame: True
+  vis_freq: 4000
+  vis_inside_freq: 400 #each iteration
+  mesh_freq: 4000
+  ckpt_freq: 500
+  keyframe_every: 4
+  mapping_window_size: 20
+  keyframe_selection_method: 'overlap'
+  lr_first_factor: 5
+  lr_factor: 1
+  pixels: 4000
+  iters_first: 1000
+  iters: 15
+  w_sdf_fs: 5
+  w_sdf_center: 200
+  w_sdf_tail: 10
+  w_depth: 0.1
+  w_color: 5
+  lr:
+    decoders_lr: 0.001
+    planes_lr: 0.005
+    c_planes_lr: 0.005
+cam:
+  H: 680
+  W: 1200
+  fx: 600.0
+  fy: 600.0
+  cx: 599.5
+  cy: 339.5
+  png_depth_scale: 6553.5 #for depth image in png format
+  crop_edge: 0
+rendering:
+  n_stratified: 32
+  n_importance: 8
+  perturb: True
+  learnable_beta: True
+model:
+  c_dim: 32
+  truncation: 0.06
