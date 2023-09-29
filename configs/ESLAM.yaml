@@ -11,7 +11,7 @@ c_planes_res:
   fine: 0.03
 meshing:
   level_set: 0
-  resolution: 0.01 #cm # Increase this number to speed up meshing algorithm
+  resolution: 0.01 # Increase this number to speed up meshing algorithm
   eval_rec: False
   mesh_bound_scale: 1.02
 tracking:

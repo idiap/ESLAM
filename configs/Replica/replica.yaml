@@ -1,6 +1,6 @@
 dataset: 'replica'
 meshing:
-  resolution: 0.01 #cm # Increase this number to speed up meshing algorithm
+  resolution: 0.01 # Increase this number to speed up meshing algorithm
   eval_rec: True
 tracking:
   ignore_edge_W: 75

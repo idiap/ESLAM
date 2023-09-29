@@ -1,6 +1,6 @@
 dataset: 'scannet'
 meshing:
-  resolution: 0.02 #cm # Increase this number to speed up meshing algorithm
+  resolution: 0.02 # Increase this number to speed up meshing algorithm
   eval_rec: False
 tracking:
   ignore_edge_W: 75
